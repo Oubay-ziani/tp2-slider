@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>exo2</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align:center;
+}
+
+
+.slider-container{
+    width:300px;
+    margin:auto;
+    border:2px solid #4a76a8;
+    padding:10px;
+}
+
+
+.slider{
+    width:300px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+
+
+.slider-title{
+    position:absolute;
+    top:5px;
+    left:10px;
+    font-size:30px;
+    font-weight:bold;
+    color:black;
+    background:none;     
+    border-radius:0;
+    z-index:2;
+}
+
+
+.slides{
+    display:flex;
+    transition:transform 0.5s ease;
+    height:100%;
+}
+
+
+.slide{
+    min-width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    height:260px;
+}
+
+
+.slide img{
+    width:90%;
+    max-height:200px;
+    object-fit:contain;
+}
+
+
+.buttons{
+    margin-top:10px;
+}
+
+.buttons button{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:none;
+    background:#1e73d8;
+    color:white;
+    font-weight:bold;
+    margin:5px;
+    cursor:pointer;
+}
+
+.buttons button:hover{
+    background:#0b4fa8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slider-container">
+
+    <div class="slider">
+
+       
+        <div class="slider-title">Choisis ta Basket !</div>
+
+        <div class="slides">
+
+            <div class="slide">
+                <img src="basket1.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="basket2.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="basket3.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="basket4.jpg">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="changeSlide(0)">1</button>
+        <button onclick="changeSlide(1)">2</button>
+        <button onclick="changeSlide(2)">3</button>
+        <button onclick="changeSlide(3)">4</button>
+    </div>
+
+</div>
+
+<script>
+
+let index = 0;
+
+function changeSlide(i){
+    index = i;
+
+    document.querySelector(".slides").style.transform =
+        "translateX(" + (-300 * index) + "px)";
+}
+
+</script>
+
+</body>
+</html>
